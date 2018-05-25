@@ -1,0 +1,121 @@
+html {
+  font-size: 10px;
+  background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background-size: cover;
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+    transition: all .07s ease;
+
+  /** [A]
+   * 
+   * Consider this line:
+   */ transition: all .07s ease; /** 
+   * 
+   * Read the introduction (up to the first blue section line) in
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+   * to introduce yourself to CSS transitions.
+   * 
+   * Then visit
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/transition.
+   * Read the introduction, play around with the demo, then consider the
+   * subsequent syntax examples. The third example matches the syntax we
+   * have above; the sixth example explains the keyword `all`.
+   * 
+   * Describe in your own words what effect this line has on DOM elements with
+   * the class 'key'. A single sentence is sufficient.
+   * 
+   * <describe-here>
+   * 
+   */
+
+  /** [B]
+   * 
+   * Now visit
+   * https://developer.mozilla.org/en-US/docs/Web/Events/transitionend
+   * to learn about the 'transitionend' event, which you will need for
+   * this exercise. Read the introduction, then look at the subsequently
+   * listed properties. These are the properties of the 'transitionend' DOM
+   * event object, the object emitted by the DOM that signals the end of a 
+   * CSS transition.
+   * 
+   * When using jQuery, you can access this event object by setting up an
+   * event listener on 'transitionend' and referencing the callback function's
+   * argument, e.g.,
+   * 
+   *   $('.some-class').on('transitionend', (e) => { // do things with e });
+   * 
+   * The argument `e` is a jQuery event object that wraps the DOM event
+   * object (much like `$(document)` returns a jQuery object that wraps
+   * the DOM object `document`). You can access the original DOM event
+   * object through `e.originalEvent`, e.g., the program
+   * 
+   *   $('.some-class').on('transitionend', (e) => {
+   *     console.log(e.originalEvent.propertyName);
+   *   });
+   * 
+   * will log the `propertyName` value of the 'transitionend' DOM event every
+   * time it is fired by DOM elements of class 'some-class'.
+   * 
+   * Why does jQuery bother wrapping the DOM event object at all? This is
+   * useful for normalizing any differences in event implementations across
+   * different browsers. For convenience, common properties are copied to 
+   * the top level of the jQuery object. For example, the program
+   *
+   *   $('.some-class').on('transitionend', (e) => {
+   *     console.log(e.pageX);
+   *   });
+   * 
+   * will log the horizontal position of the 'some-class' element that fired
+   * the 'transitionend' event.
+   * 
+   * Visit https://learn.jquery.com/events/inside-event-handling-function/
+   * to see other commonly used properties that are copied to the top level
+   * of the jQuery event object. Give another example of a DOM event property 
+   * at the top level of a jQuery object (other than `pageX` and `pageY`).
+   * 
+   * <your-answer-here>
+   */
+
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}

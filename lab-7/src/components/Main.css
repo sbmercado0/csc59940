@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+}
+
+body {
+   margin:0;
+   padding:0;
+}
+
+th {
+   text-align: center;
+   background-color: lightyellow;
+}
+
+tr {
+    background-color: white;
+}
+
+th, td {
+    padding: 10px;
+    border-top:  2px solid lightgray;
+    border-bottom:  2px solid lightgray;
+}
+
+.tableName {
+  margin: 12px;
+}
+
+.addTitle label {
+  margin-left: 55px;
+  margin-right: 20px;
+}
+
+.addTitle input {
+  width: 80%;
+}
+
+.addTitle button {
+  width: 100%;
+}
+
+#top-header {
+    background-color: #17a2b8;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}

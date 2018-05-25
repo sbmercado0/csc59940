@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">    
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+
+  <script type="text/javascript">
+    /** [A]
+     *
+     * This code fetches a large list of places in the United States and loads
+     * it into the array `places`. Visit the URL to see the structure of each
+     * place object.
+     *
+     */
+    var places = [];
+    fetch('https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json')
+      .then(blob => blob.json())
+      .then(data => places.push(...data));
+
+
+    /** [B]
+     *
+     * This function takes a place object and returns a formatted display name.
+     * Load this page in Chrome, open DevTools, run `getCityName(places[2])`
+     * (without the backticks), and write down the output below.
+     * 
+     * <your-answer-here>
+     * 
+     */
+    function getCityName(place) {
+      return `${place.city}, ${place.state}`;
+    }
+
+
+    /** [C]
+     * 
+     * This function takes a search string and returns a list of place objects
+     * whose city name or state name contains the search string (case-
+     * insensitive). In the Chrome console, run `findMatches('bos')` and write
+     * the names of the two cities returned.
+     * 
+     * <your-answer-here>
+     *
+     * You don't need to understand the details of the implementation, but
+     * here are some additional resources to check out if you're curious:
+     * - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+     * - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+     * - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+     * 
+     */
+    function findMatches(searchText) {
+      return places.filter(place => {
+        var p = new RegExp(searchText, 'gi');
+        return place.city.match(p) || place.state.match(p);
+      });
+    }
+
+    /** [D]
+     * 
+     * This function takes the string `text` and a search string `searchText`
+     * and returns a new string in which all case-insensitive instances of
+     * `searchText` in `text` are replaced with the string
+     *   `<span class="hl">${searchText}</span>`
+     * where `${searchText}` is replaced with the value of `searchText`. Run
+     * `highlighted(getCityName(places[37]), 'i')` in the Chrome console and
+     * paste the output here.
+     *
+     * <your-answer-here>
+     * 
+     */
+    function highlighted(text, searchText) {
+      return text.replace(
+        new RegExp(searchText, 'gi'),
+        `<span class="hl">${searchText}</span>`
+      );
+    }
+
+    /** [E]
+     * 
+     * In the Codecademy tutorial, you learned how to navigate over live DOM
+     * elements and modify their CSS. You can also create and display entirely
+     * new DOM elements (this is what happens when you receive a new message
+     * in Facebook Messenger). 
+     * 
+     * Open the Chrome console and run the following commands individually
+     * in the listed order, each on their own line.
+     *   htmlString = highlighted(getCityName(places[37]), 'i')  
+     *   $span = $('<span/>').append(htmlString)
+     *   $('li').append($span)
+     *
+     * You should see your answer from D show up below the search bar, now styled.
+     *
+     * Read the following documentation to understand the code above:
+     * - http://api.jquery.com/jquery/#jQuery2
+     * - http://api.jquery.com/append/
+     * - http://api.jquery.com/Types/#htmlString (note the second paragraph)
+     *
+     */
+
+
+    /** [F]
+     *
+     * Write the JavaScript code for a type-ahead search bar.
+     * 
+     * Demo:
+     * https://csc59940.github.io/demo/2/2/index.html
+     * 
+     * Requirements:
+     * - The type-ahead suggestions update with every keystroke.
+     * - Type-ahead suggestions must contain all places whose city name or
+     *   state name contain a case-insensitive instance of the search text.
+     * - Each type-ahead suggestion is displayed as a <li> child element of
+     *   the element with class 'suggestions' and has the form
+     *     <li>
+     *       <span class="name">(suggested city name, suggested state name)</span>
+     *       <span class="population">(suggested city population)</span>
+     *     </li>
+     * - There are no error messages printed to the Chrome console.
+     *
+     * Additional resources you may find useful:
+     * - https://api.jquery.com/keyup/
+     * - See the introductory example of a JavaScript for loop in
+     *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+     */
+    $(document).ready(() => {
+      // your code here
+    });
+
+  </script>
+
+  </body>
+</html>

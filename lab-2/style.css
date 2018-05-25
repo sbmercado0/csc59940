@@ -1,0 +1,139 @@
+/*html {
+    background: #e6e9e9;
+    background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2em 2em 4em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h2 {
+    margin-top: 1.3em;
+}
+
+a {
+    color: #0083e8;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+samp {
+    display: none;
+}
+
+img {
+    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+}
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+*/
+.bglight {
+    background-color: #2F5478;
+    color: #FFFFFF;
+}
+
+navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #FFFFFF;
+}
+
+.my-sm-0 {
+    color: #FFFFFF;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.navbar-light .navbar-brand {
+    color: #FFF;
+}
+
+.bgdark{
+    background-color: black;
+    color: #FFF;
+}
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+    color: #FFF;
+}
+
+
+.display-4{
+    color: #2F5478;
+    margin-top: 50px;
+}
+
+.lead{
+    color: black;
+}
+
+.btn-sml{
+    color: #FFFFFF;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.jumbotron {
+    height: 450px;
+}
+
+.container{
+    margin-top: 75px;
+    margin-bottom: auto;
+}
+
+h3{
+    font-size: 23px;
+    color: #2F5478;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    font-size: 18px;
+}
+
+

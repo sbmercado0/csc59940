@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CounterList</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <style>
+    button {
+      margin: 5px;
+    }
+  </style>
+
+  <form id="add-counter">
+    <input id="new-counter-name" type="text">
+    <input type="submit" value="Add Counter">
+  </form>
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    class CounterList {
+        constructor(){
+            this.counters = [];
+        }
+        
+        addNewCounter(counter){
+            this.counters.push(counter)
+        }
+        
+        render() {
+            const data = $("<ul>");
+            for(var i=0; i<this.counters.length;i++){
+                data.append(this.counters[i].render());
+            }
+            return data;
+        }
+        
+    }
+      
+    class Counter {
+        constructor(name){
+            this.name = name; 
+            this.count = 0;
+        }
+        decrement() {
+            self.count--;
+            renderPage();
+        }
+        increment() {
+            self.count++;
+            renderPage();
+        }
+        
+        render(){
+            var item = $("<li></li>")
+            item.append($("<span>"+this.name+"</span>"));
+            item.append($("<input type=\"button\" value = \"-\" />").click(Counter.decrement));
+            item.append("<span>"+this.count+"</span>");
+            item.append('<input type="button" onCLick = "increment()" value = \"+\" />');
+            item.append("</li>");
+            return item;
+        }
+      // implement this class
+    }
+  
+        list = new CounterList();
+
+    function renderPage() {
+      // empty the <div id="container"></div> element and add the new list
+      $('#container').empty().append(list.render());
+    }
+    $('#add-counter').submit(function(e) {
+      // prevent the page from refreshing
+      e.preventDefault();
+      // get the form-submitted text
+      var newCounterName = $('#new-counter-name').val();
+      // clear the form
+      $('#new-counter-name').val('');
+      // add a new Counter object to `list` (you need to implement this method above)
+      list.addNewCounter(new Counter(newCounterName));
+      // render the counter list
+      renderPage();
+    });
+
+    /**
+     * Answers to discussion questions here:
+     */
+  </script>
+</body>
+</html>
